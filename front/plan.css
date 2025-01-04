@@ -39,7 +39,7 @@ main {
 }
 
 .filters {
-    width: 280px; /* Zmniejszono szerokość */
+    width: 280px;
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
@@ -90,7 +90,7 @@ main {
     padding: 15px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    max-width: 70%; /* Zmniejszona szerokość, by tabela zmieściła się lepiej */
+    max-width: 70%;
 }
 
 .schedule .view-buttons {
@@ -133,12 +133,12 @@ main {
 .schedule table {
     width: 100%;
     border-collapse: collapse;
-    table-layout: fixed; /* Ustawienie stałej szerokości dla wszystkich kolumn */
+    table-layout: fixed;
 }
 
 .schedule th, .schedule td {
     border: 1px solid #ddd;
-    padding: 10px 6px; /* Zwiększenie wysokości komórek */
+    padding: 10px 6px;
     text-align: center;
 }
 
@@ -160,5 +160,5 @@ main {
 }
 
 .schedule td {
-    height: 15px; /* Zwiększenie wysokości wierszy */
+    height: 15px;
 }
