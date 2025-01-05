@@ -38,51 +38,6 @@ main {
     padding: 20px;
 }
 
-.filters {
-    width: 280px;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.filters label {
-    display: block;
-    margin: 10px 0 5px;
-}
-
-.filters input, .filters select {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-.filters button {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.filters .search {
-    background-color: cornflowerblue;
-    color: #fff;
-}
-
-.filters .statistics {
-    background-color: grey;
-    color: #fff;
-}
-
-.filters .reset {
-    background-color: grey;
-    color: #fff;
-}
-
 .schedule {
     flex-grow: 1;
     margin-left: 20px;
@@ -91,22 +46,8 @@ main {
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     max-width: 70%;
-}
-
-.schedule .view-buttons {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 10px;
-}
-
-.schedule .view-buttons button {
-    background-color: #007bff;
-    border: none;
-    color: #fff;
-    padding: 8px 15px;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-left: 10px;
+    overflow-y: auto; /* Suwak do przewijania */
+    height: 500px; /* Ustawiona wysokość */
 }
 
 .schedule .header {
@@ -119,15 +60,6 @@ main {
 .schedule .header .date-range {
     font-size: 18px;
     font-weight: bold;
-}
-
-.schedule .header button {
-    background-color: #007bff;
-    border: none;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
 }
 
 .schedule table {
@@ -160,7 +92,20 @@ main {
 }
 
 .schedule td {
-    height: 15px;
+    height: 45px;
 }
 
+#semester-calendar {
+    display: flex;
+    flex-wrap: wrap;
+    height: 400px;
+}
 
+.schedule .semester-table {
+    width: 100%;
+}
+
+.schedule td {
+    text-align: center;
+    vertical-align: middle;
+}

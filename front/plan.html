@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plan zajęć</title>
     <link rel="stylesheet" href="plan.css">
+    <link id="dynamic-style" rel="stylesheet" href="tygodniowy.css"> <!-- Domyślny widok -->
 </head>
 <body>
 <div class="container">
@@ -36,12 +37,18 @@
 
             <label for="type">Rodzaj zajęć</label>
             <select id="type">
-                <option>Wybierz rodzaj zajęć</option>
+                <option value="">Wybierz rodzaj zajęć</option>
+                <option value="wykład">Wykład</option>
+                <option value="ćwiczenia">Ćwiczenia</option>
+                <option value="laboratorium">Laboratorium</option>
+                <option value="seminarium">Seminarium</option>
             </select>
 
             <label for="favorites">Ulubione filtry</label>
             <select id="favorites">
-                <option>Wybierz filtr</option>
+                <option value="">Wybierz filtr</option>
+                <option value="filtr1">Filtr 1</option>
+                <option value="filtr2">Filtr 2</option>
             </select>
 
             <button class="search">Szukaj</button>
@@ -66,17 +73,16 @@
                 <thead>
                 <tr>
                     <th></th>
-                    <th>pon. 30.12</th>
-                    <th>wt. 31.12</th>
-                    <th>śr. 1.01</th>
-                    <th>czw. 2.01</th>
-                    <th>pt. 3.01</th>
-                    <th>sob. 4.01</th>
-                    <th>niedz. 5.01</th>
+                    <th>pon</th>
+                    <th>wt</th>
+                    <th>śr</th>
+                    <th>czw</th>
+                    <th>pt</th>
+                    <th>sob</th>
+                    <th>niedz</th>
                 </tr>
                 </thead>
                 <tbody>
-
                 <tr>
                     <td class="time">07</td>
                     <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
@@ -142,5 +148,6 @@
         </section>
     </main>
 </div>
+<script src="plan.js"></script>
 </body>
 </html>

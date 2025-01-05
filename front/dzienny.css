@@ -1,0 +1,37 @@
+/* Widok dzienny - kalendarz jednodniowy */
+
+/* Ukrycie nagłówków dni tygodnia */
+.schedule th {
+    display: none;
+}
+
+/* Ustawienie tabeli na kalendarz jednodniowy */
+.schedule table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    height: auto;
+}
+
+
+/* Komórki tabeli (jedna kolumna dla godziny) */
+.schedule table tbody tr td {
+    display: table-cell;
+    width: 100%; /* Tylko jedna kolumna zajmująca całą szerokość */
+    text-align: center;
+    padding: 10px 10px;
+    border-bottom: 1px solid #ddd; /* Oddzielenie wierszy */
+}
+
+/* Dostosowanie wysokości komórek */
+.schedule td {
+    height: 60px; /* Wysokość komórek */
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+
+
+
+
