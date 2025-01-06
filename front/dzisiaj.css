@@ -1,37 +1,37 @@
-/* Widok dzienny - kalendarz jednodniowy */
-
-/* Ukrycie nagłówków dni tygodnia */
-.schedule th {
+.schedule table {
     display: none;
 }
 
-/* Ustawienie tabeli na kalendarz jednodniowy */
-.schedule table {
-    width: 100%;
-    table-layout: fixed;
-    border-collapse: collapse;
-    height: auto;
+.empty-box {
+    width: 400px;
+    height: 100px;
+    background-color: #f5f5f5;
+    border: 1px solid #d1d1d1;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 16px auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.empty-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
 
-/* Komórki tabeli (jedna kolumna dla godziny) */
-.schedule table tbody tr td {
-    display: table-cell;
-    width: 100%; /* Tylko jedna kolumna zajmująca całą szerokość */
+.schedule .header button:first-child,
+.schedule .header button:last-child {
+    display: none;
+}
+
+.schedule .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.schedule .date-range {
     text-align: center;
-    padding: 10px 10px;
-    border-bottom: 1px solid #ddd; /* Oddzielenie wierszy */
+    flex-grow: 1;
 }
-
-/* Dostosowanie wysokości komórek */
-.schedule td {
-    height: 60px; /* Wysokość komórek */
-    text-align: center;
-    vertical-align: middle;
-}
-
-
-
-
 
 

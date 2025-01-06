@@ -115,6 +115,11 @@ document.addEventListener("DOMContentLoaded", () => {
             if (button.id === "month-view") {
                 changeView("month-view");
             } else if (button.id === "week-view") {
+                // Ustawienie daty na początek bieżącego tygodnia, gdy klikniesz w "week-view"
+                currentDate = new Date(); // Aktualizowanie daty na dzisiejszą
+                currentWeekStartDate = getStartOfWeek(currentDate);
+                currentWeekEndDate = getEndOfWeek(currentDate);
+                linkElement.href = "tygodniowy.css";  // Ustawienie stylu na tygodniowy
                 changeView("week-view");
             } else if (button.id === "day-view") {
                 changeView("day-view");
@@ -122,6 +127,27 @@ document.addEventListener("DOMContentLoaded", () => {
                 changeView("today");
             }
         });
+    });
+
+    // Obsługuje kliknięcia w przycisk "Idź do daty"
+    document.getElementById("go-to-date").addEventListener("click", () => {
+        const datePicker = document.getElementById("date-picker");
+        datePicker.style.display = "block";  // Pokaż kalendarz
+    });
+
+    // Obsługuje wybór daty z kalendarza
+    document.getElementById("date-picker").addEventListener("change", (e) => {
+        const selectedDate = new Date(e.target.value);
+        currentDate = selectedDate;
+        currentWeekStartDate = getStartOfWeek(selectedDate);
+        currentWeekEndDate = getEndOfWeek(selectedDate);
+
+        // Zmiana widoku na tygodniowy i przypisanie odpowiedniego stylu
+        linkElement.href = "tygodniowy.css";  // Ustawienie widoku na tygodniowy
+        changeView("week-view");
+
+        setCurrentDate();
+        document.getElementById("date-picker").style.display = "none"; // Ukryj kalendarz
     });
 
     // Obsługuje kliknięcia w strzałki do zmiany daty w nagłówku

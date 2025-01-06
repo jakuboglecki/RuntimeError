@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plan zajęć</title>
     <link rel="stylesheet" href="plan.css">
-    <link id="dynamic-style" rel="stylesheet" href="tygodniowy.css"> <!-- Domyślny widok -->
+    <link id="dynamic-style" rel="stylesheet" href="tygodniowy.css">
 </head>
 <body>
 <div class="container">
@@ -59,6 +59,7 @@
             <div class="view-buttons">
                 <button id="today">Dzisiaj</button>
                 <button id="go-to-date">Idź do daty</button>
+                <input type="date" id="date-picker" style="display: none;" />
                 <button id="day-view">Dzień</button>
                 <button id="week-view">Tydzień</button>
                 <button id="month-view">Miesiąc</button>
@@ -69,6 +70,9 @@
                 <div class="date-range">30.12.2024 - 05.01.2025</div>
                 <button>&gt;</button>
             </div>
+            <div class="empty-box"></div>
+            <div class="empty-box"></div>
+            <div class="empty-box"></div>
             <table>
                 <thead>
                 <tr>
