@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plan zajęć</title>
+  <link rel="stylesheet" href="plan.css">
+  <link id="dynamic-style" rel="stylesheet" href="semestralny_test.css"> <!-- Domyślny widok -->
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="logo">
+      <img src="https://via.placeholder.com/200x50" alt="Logo ZUT">
+    </div>
+    <nav>
+      <button>Personalizuj</button>
+      <button>Pomoc</button>
+    </nav>
+  </header>
+  <main>
+    <section class="filters">
+      <label for="lecturer">Wykładowca</label>
+      <input id="lecturer" type="text" placeholder="Podaj nazwisko">
+
+      <label for="room">Sala</label>
+      <input id="room" type="text" placeholder="Podaj salę">
+
+      <label for="subject">Przedmiot</label>
+      <input id="subject" type="text" placeholder="Podaj przedmiot">
+
+      <label for="group">Grupa</label>
+      <input id="group" type="text" placeholder="Podaj grupę">
+
+      <label for="album">Numer albumu</label>
+      <input id="album" type="text" placeholder="Podaj numer albumu">
+
+      <label for="type">Rodzaj zajęć</label>
+      <select id="type">
+        <option value="">Wybierz rodzaj zajęć</option>
+        <option value="wykład">Wykład</option>
+        <option value="ćwiczenia">Ćwiczenia</option>
+        <option value="laboratorium">Laboratorium</option>
+        <option value="seminarium">Seminarium</option>
+      </select>
+
+      <label for="favorites">Ulubione filtry</label>
+      <select id="favorites">
+        <option value="">Wybierz filtr</option>
+        <option value="filtr1">Filtr 1</option>
+        <option value="filtr2">Filtr 2</option>
+      </select>
+
+      <button class="search">Szukaj</button>
+      <button class="statistics">Pokaż statystyki</button>
+      <button class="reset">Wyczyść filtry</button>
+    </section>
+    <section class="schedule">
+      <div class="view-buttons">
+        <button id="today">Dzisiaj</button>
+        <button id="go-to-date">Idź do daty</button>
+        <button id="day-view">Dzień</button>
+        <button id="week-view">Tydzień</button>
+        <button id="month-view">Miesiąc</button>
+        <button id="semester-view">Semestr</button>
+      </div>
+      <div class="header">
+        <button>&lt;</button>
+        <div class="date-range">Semestr zimowy 2024/25</div>
+        <button>&gt;</button>
+      </div>
+      <div class="semester">
+        <div class="semester-month">
+          <h3>Październik</h3>
+          <table>
+            <thead>
+            <tr>
+              <th>pon</th>
+              <th>wt</th>
+              <th>śr</th>
+              <th>czw</th>
+              <th>pt</th>
+              <th>sob</th>
+              <th>nie</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="semester-month">
+          <h3>Listopad</h3>
+          <table>
+            <thead>
+            <tr>
+              <th>pon</th>
+              <th>wt</th>
+              <th>śr</th>
+              <th>czw</th>
+              <th>pt</th>
+              <th>sob</th>
+              <th>nie</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="semester-month">
+          <h3>Grudzień</h3>
+          <table>
+            <thead>
+            <tr>
+              <th>pon</th>
+              <th>wt</th>
+              <th>śr</th>
+              <th>czw</th>
+              <th>pt</th>
+              <th>sob</th>
+              <th>nie</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="semester-month">
+          <h3>Styczeń</h3>
+          <table>
+            <thead>
+            <tr>
+              <th>pon</th>
+              <th>wt</th>
+              <th>śr</th>
+              <th>czw</th>
+              <th>pt</th>
+              <th>sob</th>
+              <th>nie</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="semester-month">
+          <h3>Luty</h3>
+          <table>
+            <thead>
+            <tr>
+              <th>pon</th>
+              <th>wt</th>
+              <th>śr</th>
+              <th>czw</th>
+              <th>pt</th>
+              <th>sob</th>
+              <th>nie</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+<script src="plan.js"></script>
+</body>
+</html>
