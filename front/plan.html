@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plan zajęć</title>
-    <link rel="stylesheet" href="plan.css">
-    <link id="dynamic-style" rel="stylesheet" href="tygodniowy.css">
+    <link rel="stylesheet" href="styles/plan.css">
+    <link id="dynamic-style" rel="stylesheet" href="styles/tygodniowy.css">
 </head>
 <body>
 <div class="container">
@@ -60,10 +60,10 @@
                 <button id="today">Dzisiaj</button>
                 <button id="go-to-date">Idź do daty</button>
                 <input type="date" id="date-picker" style="display: none;" />
-                <button id="day-view">Dzień</button>
+                <a href="dzienny.html"><button id="day-view">Dzień</button></a>
                 <button id="week-view">Tydzień</button>
                 <button id="month-view">Miesiąc</button>
-                <button id="semester-view">Semestr</button>
+                <a href="semestralny.html"><button id="semester-view">Semestr</button></a>
             </div>
             <div class="header">
                 <button>&lt;</button>
@@ -73,7 +73,7 @@
             <div class="empty-box"></div>
             <div class="empty-box"></div>
             <div class="empty-box"></div>
-            <table>
+            <table class="week">
                 <thead>
                 <tr>
                     <th></th>
