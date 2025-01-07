@@ -1,11 +1,19 @@
-.schedule td.time {
+.week{
+    display: none;
+}
+
+.day{
+    display: flex;
+}
+
+.day td.time {
     width: 10%;
     font-weight: bold;
     text-align: center;
     vertical-align: middle;
 }
 
-.schedule td.content {
+.day td.content {
     width: 90%;
     text-align: left;
     padding: 10px;
@@ -13,23 +21,23 @@
     border-left: 1px solid #ddd;
 }
 
-.schedule table {
+.day table {
     width: 100%;
     border-collapse: collapse;
     table-layout: auto;
 }
 
-.schedule th, .schedule td {
+.day th, .day td {
     border: 1px solid #ddd;
     padding: 10px 6px;
     text-align: center;
 }
 
-.schedule th:first-child, .schedule td:first-child {
+.day th:first-child, .day td:first-child {
     width: 10%;
 }
 
-.schedule th:not(:first-child), .schedule td:not(:first-child) {
+.day th:not(:first-child), .day td:not(:first-child) {
     width: auto;
 }
 

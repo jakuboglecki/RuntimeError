@@ -20,8 +20,16 @@ header {
     color: #fff;
 }
 
+header .logo{
+    max-width: 30%;
+}
+
 header .logo img {
-    max-height: 50px;
+    width: 300px;
+    height: 52px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 header nav button {
@@ -160,6 +168,14 @@ main {
 .schedule .time {
     background-color: #f9f9f9;
     font-weight: bold;
+}
+
+.day{
+    display: none;
+}
+
+.semester{
+    display: none;
 }
 
 @media(max-width: 1200px){
