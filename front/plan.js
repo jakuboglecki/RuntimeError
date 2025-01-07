@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
     const buttons = {
-        "today": "dzisiaj.css",
-        "day-view": "dzienny.css",
-        "week-view": "tygodniowy.css",
-        "month-view": "miesieczny.css",
-        "semester-view": "semestr.css"
+        "today": "../styles/dzisiaj.css",
+        "day-view": "../styles/dzienny.css",
+        "week-view": "../styles/tygodniowy.css",
+        "month-view": "../styles/miesieczny.css",
+        "semester-view": "../styles/semestralny.css"
     };
 
     const viewButtons = document.querySelectorAll(".view-buttons button");

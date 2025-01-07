@@ -163,6 +163,8 @@ main {
     height: 15px;
 }
 
+/*SEMESTRALNY*/
+
 .semester{
     display: flex;
     flex-direction: row;
@@ -195,4 +197,29 @@ main {
 }
 .semester th:not(:first-child), .schedule td:not(:first-child) {
     width: auto;
+}
+
+@media(max-width: 1200px){
+    .filters {
+        flex-shrink: 0;
+        width: 240px;
+    }
+    .schedule {
+        flex-grow: 1;
+    }
+}
+
+@media(max-width: 800px){
+    main{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .filters,
+    .schedule{
+        margin: 0 auto;
+        width: 90%;
+        max-width: 600px;
+        margin-bottom: 20px;
+    }
 }
