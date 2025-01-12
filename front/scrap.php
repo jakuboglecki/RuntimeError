@@ -299,6 +299,91 @@ function scrapZajecia($pdo, $ssl_error = False, $clearTable = True, $insertData 
     }
 }
 
+// Funkcja do scrapowania danych
+function scrapStudentData($pdo, $ssl_error = false, $clearTableCondition = true, $addToBase = true) {
+    try {
+        $base_url = 'https://plan.zut.edu.pl/schedule_student.php?number={album_index}&start=2024-10-01T00%3A00%3A00%2B01%3A00&end=2025-11-01T00%3A00%3A00%2B01%3A00';
+
+        // Czyści tabelę, jeśli warunek jest spełniony
+        if ($clearTableCondition) {
+            try {
+                $pdo->exec("DELETE FROM Student");
+                $pdo->exec("DELETE FROM sqlite_sequence WHERE name='Student'");
+                echo "Tabela Student została wyczyszczona.\n";
+            } catch (PDOException $e) {
+                echo "Blad podczas czyszczenia tabeli: " . $e->getMessage();
+                exit();
+            }
+        }
+
+        // Pobieranie danych dla numerów albumów
+        for ($album_index = 60000; $album_index >= 1; $album_index--) {
+            $url = str_replace('{album_index}', $album_index, $base_url);
+
+            // Pobieranie danych z API
+            $response = false;
+            if ($ssl_error) {
+                $options = ["ssl" => ["verify_peer" => false, "verify_peer_name" => false]];
+                $context = stream_context_create($options);
+                $response = file_get_contents($url, false, $context);
+            } else {
+                $response = file_get_contents($url);
+            }
+
+            if (!$response) {
+                echo "Brak odpowiedzi dla numeru albumu: $album_index\n";
+                continue;
+            }
+
+            $data = json_decode($response, true);
+
+            // Jeśli dane są niepuste, przetwarzamy
+            if (count($data) > 0) {
+                echo "Znaleziono dane dla numeru albumu: $album_index\n";
+
+                // Domyślny numer grupy (jeśli istnieje w danych)
+                $nrGrupy = null;
+                foreach ($data as $entry) {
+                    if (isset($entry['group_name'])) {
+                        $nrGrupy = $entry['group_name'];
+                        break; // Bierzemy pierwszą grupę
+                    }
+                }
+
+                if (!$nrGrupy) {
+                    echo "Brak numeru grupy dla numeru albumu: $album_index, pomijam.\n";
+                    continue;
+                }
+
+                if ($addToBase) {
+                    try {
+                        // Wstawianie danych do tabeli Student
+                        $stmt = $pdo->prepare("INSERT INTO Student (NumerAlbumu, NrGrupy) VALUES (:NumerAlbumu, :NrGrupy)");
+                        $stmt->bindParam(':NumerAlbumu', $album_index, PDO::PARAM_INT);
+                        $stmt->bindParam(':NrGrupy', $nrGrupy, PDO::PARAM_STR);
+                        $stmt->execute();
+                        echo "Dodano rekord: NumerAlbumu=$album_index, NrGrupy=$nrGrupy\n";
+                    } catch (PDOException $e) {
+                        echo "Błąd podczas wstawiania rekordu: " . $e->getMessage() . "\n";
+                        exit();
+                    }
+                }
+            }
+        }
+
+        echo "Scraping zakończony.\n";
+    } catch (Exception $e) {
+        echo "Błąd: " . $e->getMessage() . "\n";
+        exit();
+    }
+}
+
+
+
+
+
+
+
 // Twój kod do połączenia z bazą danych oraz wywołania funkcji scrapujących
 // Upewnij się, że masz prawidłowe połączenie z bazą danych
 try {
@@ -307,12 +392,13 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Wywołanie funkcji scrapujących
-    //scrapProwadzacy($pdo);
-    scrapSale($pdo);
-    scrapGrupa($pdo);
-    scrapStudent($pdo);
-    scrapPrzedmiot($pdo);
-    scrapZajecia($pdo);
+    #scrapProwadzacy($pdo);
+    #scrapSale($pdo);
+    #scrapGrupa($pdo);
+    #scrapStudent($pdo);
+    #scrapPrzedmiot($pdo);
+    #scrapZajecia($pdo);
+    scrapStudentData($pdo);
 } catch (PDOException $e) {
     echo "Błąd połączenia: " . $e->getMessage();
 }

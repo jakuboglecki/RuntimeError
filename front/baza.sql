@@ -12,8 +12,6 @@ CREATE TABLE Grupa (
 
 CREATE TABLE Student (
                          NumerAlbumu INTEGER PRIMARY KEY AUTOINCREMENT,
-                         Imie TEXT NOT NULL,
-                         Nazwisko TEXT NOT NULL,
                          NrGrupy INTEGER NOT NULL,
                          FOREIGN KEY (NrGrupy) REFERENCES Grupa(NrGrupy)
 );
