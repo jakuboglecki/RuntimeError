@@ -18,3 +18,43 @@
 .schedule tr:nth-child(n+6) {
     display: none;
 }
+
+/* Styl dla daty w prawym górnym rogu komórki kalendarza */
+.date-top-right {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #007bff; /* Możesz dostosować kolor do własnych potrzeb */
+    background-color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Reszta stylów dla kalendarza miesięcznego */
+.schedule td {
+    height: 100px;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+}
+
+/* Ukrycie numerów dni wewnątrz komórek */
+.schedule td {
+    font-size: 0; /* Ukrywa tekst wewnątrz komórki */
+}
+
+/* Możesz dodać również inne style do reszty tabeli */
+.schedule td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Pozostałe style są takie same */
+

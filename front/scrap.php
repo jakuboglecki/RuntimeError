@@ -307,8 +307,8 @@ function scrapStudentData($pdo, $ssl_error = false, $clearTableCondition = true,
         // Czyści tabelę, jeśli warunek jest spełniony
         if ($clearTableCondition) {
             try {
-                $pdo->exec("DELETE FROM Student");
-                $pdo->exec("DELETE FROM sqlite_sequence WHERE name='Student'");
+                $pdo->exec("DELETE FROM Album");
+                $pdo->exec("DELETE FROM sqlite_sequence WHERE name='Album'");
                 echo "Tabela Student została wyczyszczona.\n";
             } catch (PDOException $e) {
                 echo "Blad podczas czyszczenia tabeli: " . $e->getMessage();
@@ -358,11 +358,11 @@ function scrapStudentData($pdo, $ssl_error = false, $clearTableCondition = true,
                 if ($addToBase) {
                     try {
                         // Wstawianie danych do tabeli Student
-                        $stmt = $pdo->prepare("INSERT INTO Student (NumerAlbumu, NrGrupy) VALUES (:NumerAlbumu, :NrGrupy)");
+                        $stmt = $pdo->prepare("INSERT INTO Album (AlbumID, Numer) VALUES (:NumerAlbumu, :NumerAlbumu)");
                         $stmt->bindParam(':NumerAlbumu', $album_index, PDO::PARAM_INT);
-                        $stmt->bindParam(':NrGrupy', $nrGrupy, PDO::PARAM_STR);
+                        #$stmt->bindParam(':NrGrupy', $nrGrupy, PDO::PARAM_STR);
                         $stmt->execute();
-                        echo "Dodano rekord: NumerAlbumu=$album_index, NrGrupy=$nrGrupy\n";
+                        echo "Dodano rekord: NumerAlbumu=$album_index";
                     } catch (PDOException $e) {
                         echo "Błąd podczas wstawiania rekordu: " . $e->getMessage() . "\n";
                         exit();
@@ -377,7 +377,6 @@ function scrapStudentData($pdo, $ssl_error = false, $clearTableCondition = true,
         exit();
     }
 }
-
 
 
 

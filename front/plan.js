@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Funkcja do ustawienia widoku "Dzienny" lub "Dzisiaj"
     function setCurrentDay() {
-        currentDate = new Date();
+        currentDate = getStartOfWeek(new Date()); // Ustawiamy datę na początek tygodnia (poniedziałek)
         setCurrentDate();
     }
 
@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
             } else if (button.id === "day-view") {
                 changeView("day-view");
             } else if (button.id === "today") {
-                changeView("today");
+                changeView("today"); // Ustawienie widoku na dzisiejszy, ale ustawienie daty na początek tygodnia
             }
         });
     });
@@ -164,8 +164,8 @@ document.addEventListener("DOMContentLoaded", () => {
             currentDate.setDate(currentDate.getDate() - 7);
             setCurrentWeek();
         } else if (currentView === "day-view" || currentView === "today") {
-            currentDate.setDate(currentDate.getDate() - 1);
-            setCurrentDay();
+            currentDate.setDate(currentDate.getDate() - 1); // Zmiana daty na dzień poprzedni
+            setCurrentDay(); // Odświeżenie widoku dziennego
         }
     });
 
@@ -182,10 +182,16 @@ document.addEventListener("DOMContentLoaded", () => {
             currentDate.setDate(currentDate.getDate() + 7);
             setCurrentWeek();
         } else if (currentView === "day-view" || currentView === "today") {
-            currentDate.setDate(currentDate.getDate() + 1);
-            setCurrentDay();
+            currentDate.setDate(currentDate.getDate() + 1); // Zmiana daty na dzień następny
+            setCurrentDay(); // Odświeżenie widoku dziennego
         }
     });
+
+    // Funkcja do ustawienia widoku dziennego (zapewnia, że data jest odpowiednio aktualizowana)
+    function setCurrentDay() {
+        // Ustawienie daty na początek tygodnia (poniedziałek)
+        dateRangeElement.textContent = formatDayDate(currentDate); // Aktualizujemy datę na początek tygodnia
+    }
 
     // Ustawiamy domyślny widok na „tygodniowy”
     linkElement.href = "tygodniowy.css";

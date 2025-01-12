@@ -6,14 +6,15 @@ CREATE TABLE Sale (
 );
 
 CREATE TABLE Grupa (
-                       NrGrupy INTEGER PRIMARY KEY AUTOINCREMENT,
-                       Nazwa TEXT NOT NULL
+                       grupaID INTEGER PRIMARY KEY AUTOINCREMENT,
+                       nrGrupy TEXT NOT NULL
 );
 
 CREATE TABLE Student (
-                         NumerAlbumu INTEGER PRIMARY KEY AUTOINCREMENT,
-                         NrGrupy INTEGER NOT NULL,
-                         FOREIGN KEY (NrGrupy) REFERENCES Grupa(NrGrupy)
+                         studentID INTEGER PRIMARY KEY AUTOINCREMENT,
+                         NumerAlbumu INTEGER NOT NULL,
+                         grupaID INTEGER NOT NULL,
+                         FOREIGN KEY (grupaID) REFERENCES Grupa(grupaID)
 );
 
 CREATE TABLE Przedmiot (
@@ -22,13 +23,13 @@ CREATE TABLE Przedmiot (
                            Wydzial TEXT NOT NULL,
                            TypZajec TEXT,
                            ProwadzacyID INTEGER,
-                           GrupaID INTEGER,
-                           FOREIGN KEY (ProwadzacyID) REFERENCES Prowadzacy(ID),
-                           FOREIGN KEY (GrupaID) REFERENCES Grupa(NrGrupy)
+                           grupaID INTEGER,
+                           FOREIGN KEY (ProwadzacyID) REFERENCES Prowadzacy(ProwadzacyID),
+                           FOREIGN KEY (grupaID) REFERENCES Grupa(grupaID)
 );
 
 CREATE TABLE Prowadzacy (
-                            ID INTEGER PRIMARY KEY AUTOINCREMENT,
+                            ProwadzacyID INTEGER PRIMARY KEY AUTOINCREMENT,
                             Imie TEXT NOT NULL,
                             Nazwisko TEXT NOT NULL
 );
@@ -40,9 +41,14 @@ CREATE TABLE Zajecia (
                          ProwadzacyID INTEGER NOT NULL,
                          SalaID INTEGER NOT NULL,
                          PrzedmiotID INTEGER NOT NULL,
-                         GrupaID INTEGER NOT NULL,
-                         FOREIGN KEY (ProwadzacyID) REFERENCES Prowadzacy(ID),
+                         grupaID INTEGER NOT NULL,
+                         FOREIGN KEY (ProwadzacyID) REFERENCES Prowadzacy(ProwadzacyID),
                          FOREIGN KEY (SalaID) REFERENCES Sale(NrSal),
                          FOREIGN KEY (PrzedmiotID) REFERENCES Przedmiot(PrzedmiotID),
-                         FOREIGN KEY (GrupaID) REFERENCES Grupa(NrGrupy)
+                         FOREIGN KEY (grupaID) REFERENCES Grupa(grupaID)
+);
+
+CREATE TABLE Album (
+                         AlbumID INTEGER PRIMARY KEY AUTOINCREMENT,
+                         Numer INTEGER NOT NULL
 );
