@@ -120,6 +120,11 @@ main {
     margin-bottom: 10px;
 }
 
+.schedule .view-buttons button:first-child{
+    margin-right: auto;
+    font-size: 120%;
+}
+
 .schedule .header {
     display: flex;
     justify-content: space-between;

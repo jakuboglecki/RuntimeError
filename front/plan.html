@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plan zajęć</title>
     <link rel="stylesheet" href="styles/plan.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <link id="dynamic-style" rel="stylesheet" href="styles/tygodniowy.css">
 </head>
 <body>
@@ -46,9 +47,9 @@
 
             <label for="favorites">Ulubione filtry</label>
             <select id="favorites">
-                <option value="">Wybierz filtr</option>
-                <option value="filtr1">Filtr 1</option>
-                <option value="filtr2">Filtr 2</option>
+<!--                <option value="">Wybierz filtr</option>-->
+<!--                <option value="filtr1">Filtr 1</option>-->
+<!--                <option value="filtr2">Filtr 2</option>-->
             </select>
 
             <button class="search">Szukaj</button>
@@ -57,6 +58,7 @@
         </section>
         <section class="schedule">
             <div class="view-buttons">
+                <button id="favorite"><i class="fa-regular fa-heart"></i></button>
                 <button id="today">Dzisiaj</button>
                 <button id="go-to-date">Idź do daty</button>
                 <input type="date" id="date-picker" style="display: none;" />
@@ -413,5 +415,6 @@
 <script src="kafelkidniowy.js"></script>
 <script src="kafelkidzisiaj.js"></script>
 <script src="kafelkimiesiac.js"></script>
+<script src="ulubione.js"></script>
 </body>
 </html>
