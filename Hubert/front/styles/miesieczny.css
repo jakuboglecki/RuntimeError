@@ -1,0 +1,20 @@
+.schedule td.time,
+.schedule th:first-child,
+.schedule td:first-child {
+    display: none;
+}
+
+.schedule td {
+    height: 100px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.schedule th,
+.schedule td {
+    width: 13.71%;
+}
+
+.schedule tr:nth-child(n+6) {
+    display: none;
+}
