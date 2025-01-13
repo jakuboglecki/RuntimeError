@@ -203,17 +203,14 @@ main {
     }
 }
 
-/* Wyłączenie wyświetlania tabeli w widoku dziennym */
 .day {
     display: none;
 }
 
-/* Wyłączenie wyświetlania sekcji semestralnej */
 .semester {
     display: none;
 }
 
-/* Zakomentowanie stylów, które mogą być niepożądane */
 .schedule table {
     /* display: none; */
 }
