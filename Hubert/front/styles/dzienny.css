@@ -1,0 +1,67 @@
+.week{
+    display: none;
+}
+
+.day{
+    display: flex;
+}
+
+.day td.time {
+    width: 10%;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.day td.content {
+    width: 90%;
+    text-align: left;
+    padding: 10px;
+    vertical-align: top;
+    border-left: 1px solid #ddd;
+}
+
+.day table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+}
+
+.day th, .day td {
+    border: 1px solid #ddd;
+    padding: 10px 6px;
+    text-align: center;
+}
+
+.day th:first-child, .day td:first-child {
+    width: 10%;
+}
+
+.day th:not(:first-child), .day td:not(:first-child) {
+    width: auto;
+}
+
+@media(max-width: 1200px){
+    .filters {
+        flex-shrink: 0;
+        width: 240px;
+    }
+    .schedule {
+        flex-grow: 1;
+    }
+}
+
+@media(max-width: 800px){
+    main{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .filters,
+    .schedule{
+        margin: 0 auto;
+        width: 90%;
+        max-width: 600px;
+        margin-bottom: 20px;
+    }
+}
