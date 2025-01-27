@@ -20,7 +20,7 @@ header {
     color: #fff;
 }
 
-header .logo{
+header .logo {
     max-width: 30%;
 }
 
@@ -170,36 +170,111 @@ main {
     font-weight: bold;
 }
 
-.day{
+.day {
     display: none;
 }
 
-.semester{
+.semester {
     display: none;
 }
 
-@media(max-width: 1200px){
+#personalizeWindow {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    width: 300px;
+    height: auto;
+    display: none;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+#personalizeWindow button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 10px 0;
+    width: 100%;
+}
+
+#personalizeWindow button:hover {
+    background-color: #0056b3;
+}
+
+#personalizeButton {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#personalizeButton:hover {
+    background-color: #0056b3;
+}
+
+@media(max-width: 1200px) {
     .filters {
         flex-shrink: 0;
         width: 240px;
     }
+
     .schedule {
         flex-grow: 1;
     }
+
+    .schedule th:first-child, .schedule td:first-child {
+        width: 6%;
+    }
+
+    .schedule th:not(:first-child), .schedule td:not(:first-child) {
+        width: 13.42%;
+    }
 }
 
-@media(max-width: 800px){
-    main{
+@media(max-width: 800px) {
+    main {
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
+
     .filters,
-    .schedule{
+    .schedule {
         margin: 0 auto;
         width: 90%;
         max-width: 600px;
         margin-bottom: 20px;
+    }
+
+    .schedule th:first-child, .schedule td:first-child {
+        width: 5%;
+    }
+
+    .schedule th:not(:first-child), .schedule td:not(:first-child) {
+        width: 13.57%;
     }
 }
 
@@ -217,4 +292,145 @@ main {
 
 .month {
     display: none;
+}
+
+.activity-card {
+    position: absolute;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #f9f9f9;
+    text-align: center;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow: hidden;
+    max-width: 100%;
+    font-size: 12px;
+    transition: height 0.3s;
+}
+
+.activity-card strong {
+    font-size: 14px;
+}
+
+.activity-card span {
+    font-size: 12px;
+}
+
+.night-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.night-mode header {
+    background-color: #1f1f1f;
+}
+
+.night-mode * {
+    color: #d1d1d1;
+}
+
+.night-mode button {
+    background-color: #444;
+    color: #fff;
+}
+
+.night-mode .filters, .night-mode .schedule {
+    background-color: #222;
+    color: #fff;
+}
+
+.night-mode .schedule table {
+    background-color: #1a1a1a;
+    color: #fff;
+    border-collapse: collapse;
+}
+
+.night-mode .schedule th, .night-mode .schedule td {
+    border: 1px solid #444;
+    padding: 10px;
+    text-align: center;
+}
+
+.night-mode .schedule th {
+    background-color: #222;
+    color: #fff;
+}
+
+.night-mode .schedule .time {
+    background-color: #333;
+}
+
+.night-mode .schedule td {
+    background-color: #2b2b2b;
+}
+
+.night-mode .schedule .empty-box {
+    background-color: #2b2b2b;
+    border: 1px solid #444;
+}
+
+.night-mode button {
+    background-color: #444;
+    color: white;
+    border: 1px solid #555;
+}
+
+.night-mode button:hover {
+    background-color: #555;
+}
+
+.night-mode input, .night-mode select {
+    background-color: #333;
+    color: white;
+    border: 1px solid #555;
+}
+
+.night-mode input::placeholder, .night-mode select {
+    color: #888;
+}
+
+.night-mode #personalizeWindow {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+.night-mode #personalizeWindow input,
+.night-mode #personalizeWindow select {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+.night-mode #personalizeWindow input::placeholder {
+    color: #888;
+}
+
+.night-mode #personalizeWindow label,
+.night-mode #personalizeWindow h3 {
+    color: #fff;
+}
+
+.night-mode #closePersonalizeWindow:hover {
+    background-color: #555;
+}
+
+#modeIcon {
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.night-mode #modeIcon {
+    color: #fff;
+}
+
+#modeIcon {
+    color: #f39c12;
+}
+
+#modeIcon:hover {
+    color: #ffd700;
 }

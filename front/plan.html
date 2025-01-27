@@ -15,7 +15,7 @@
             <img src="img/logo-zut.svg" alt="Logo ZUT">
         </div>
         <nav>
-            <button>Personalizuj</button>
+            <button id="personalizeButton">Personalizuj</button>
             <button>Pomoc</button>
         </nav>
     </header>
@@ -47,15 +47,33 @@
 
             <label for="favorites">Ulubione filtry</label>
             <select id="favorites">
-<!--                <option value="">Wybierz filtr</option>-->
-<!--                <option value="filtr1">Filtr 1</option>-->
-<!--                <option value="filtr2">Filtr 2</option>-->
+                <!--                <option value="">Wybierz filtr</option>-->
+                <!--                <option value="filtr1">Filtr 1</option>-->
+                <!--                <option value="filtr2">Filtr 2</option>-->
             </select>
 
             <button class="search">Szukaj</button>
             <button class="statistics">Pokaż statystyki</button>
             <button class="reset">Wyczyść filtry</button>
         </section>
+
+        <div id="personalizeWindow" style="display: none;">
+            <h3>Personalizuj ustawienia</h3>
+
+            <div>
+                <label for="fontSize">Rozmiar czcionki:</label>
+                <button id="increaseFontSize">Zwiększ</button>
+                <button id="decreaseFontSize">Zmniejsz</button>
+            </div>
+
+            <div>
+                <label for="nightMode">Tryb nocny:</label>
+                <i id="modeIcon" class="fa-solid fa-sun" aria-label="Zmień tryb na nocny"></i>
+            </div>
+
+            <button id="closePersonalizeWindow">Zamknij</button>
+        </div>
+
         <section class="schedule">
             <div class="view-buttons">
                 <button id="favorite"><i class="fa-regular fa-heart"></i></button>
@@ -416,5 +434,6 @@
 <script src="kafelkidzisiaj.js"></script>
 <script src="kafelkimiesiac.js"></script>
 <script src="ulubione.js"></script>
+<script src="personalizacja.js"></script>
 </body>
 </html>
